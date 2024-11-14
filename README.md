@@ -15,5 +15,5 @@ npm install
 Start the Application: Use this command to start the application, often used in development:
 
 ## Start the Project
-npm install
+npm start
 
