@@ -1,3 +1,9 @@
+OUTPUT OF THIS CODE
+
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/16957806-f1e9-4e4a-9a89-a1ed389ceada">
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
