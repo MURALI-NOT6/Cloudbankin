@@ -1,0 +1,353 @@
+@import "../fonts/stylesheet.css";
+@import "./reset.scss";
+@import "./variables.scss";
+
+* {
+    font-family: 'Roboto' !important;
+}
+
+body {
+    background: #ededed;
+}
+
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    color: $fontColor;
+}
+
+a:hover,
+a {
+    text-decoration: none !important;
+}
+.primayBtn,.secountryBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    background: $primay;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.secountryBtn{
+    color: $black;
+    background: $white;
+    border: 1px solid $gary;
+}
+// ========== Field style ======
+input,
+input:focus,
+textarea,
+textarea:focus,
+textarea:focus-visible {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid $border;
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+    height: 64px;
+}
+
+// ----- React select npm style ---
+[class*='-control'] {
+    border: 1px solid $border;
+    padding: 0px;
+    cursor: pointer !important;
+}
+[class*='-indicatorSeparator'] {
+   display: none;
+} 
+// ======== Header ===========
+.header {
+    background: $white;
+    display: flex;
+
+    .headerRow {
+        padding: 20px;
+        width: 100%;
+        box-shadow: 0 0 18px 1px rgba(0, 0, 0, .1);
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logoIcon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            background: $primay;
+            border-radius: 5px;
+            margin-right: 4px;
+            text-decoration: none;
+        }
+
+        .logo p {
+            color: $black;
+            font-weight: 600;
+        }
+
+        .profileInfo {
+            display: flex;
+            align-items: center;
+        }
+
+        .profileInfo .icon {
+            width: 28px;
+            height: 28px;
+            color: $white;
+            background: $primay;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 4px;
+        }
+
+    }
+}
+
+
+
+// ============ Form section ====
+.loanForm {
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: $formBg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .stepProgress {
+        max-width: 580px;
+        width: 100%;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 50px;
+            width: calc(100% - 100px);
+            height: 2px;
+            border-top: 4px dotted $gary;
+            z-index: 0;
+        }
+
+        .activeLine {
+            width: 0%;
+            border-top: 4px dotted $primay;
+            position: absolute;
+            top: 12px;
+            left: 50px;
+            transition: .5s ease-in-out;
+        }
+
+        .stepInfo {
+            text-align: center;
+            position: relative;
+            width: 110px;
+            cursor: pointer;
+
+            .step {
+                width: 26px;
+                height: 26px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #ebf0f5;
+                border-radius: 50%;
+                font-size: 14px;
+                color: #989a9d;
+                margin: 0 auto;
+                margin-bottom: 18px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .progressName {
+                font-size: 14px;
+            }
+            &.active{
+                .step{
+                    background-color: $primay;
+                    color: $white;
+                    transition: background-color 0.3s ease-in-out .3s, color 0.3s ease-in-out .3s;
+                }
+                .progressName{
+                    color: $primay; 
+                    transition:color 0.3s ease-in-out .3s;
+                }
+            }
+        }
+    }
+
+    .progressInfo {
+        width: 800px;
+        background: $white;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 32px 0;
+        position: relative;
+        padding-bottom: 60px;
+
+        .fieldRow {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .tab-section{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
+    }
+
+    .actionFooter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        background: $white; 
+        border-top: 1px solid $gary;
+        .secountryBtn{
+            margin-right: 20px;
+        }
+    }
+}
+
+// ==================
+.fieldTitle {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.formFieldSection {
+    margin-top: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    width: 100%; 
+    max-height: 350px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    .fieldSection {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 14px;
+
+        label {
+            margin-bottom: 8px;
+        }
+
+    }
+}
+// ==================
+.fileUpload{
+    padding: 14px;
+    width: 100%;
+    border: 3px dotted $border; 
+    position: relative;
+} 
+.fileUpload p{
+    text-align: center;
+    font-size: 14px !important;
+    font-weight: 500;
+}
+.fileUpload p span{
+    color: $primay;
+}
+.fileUpload input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.fileName{
+    display: flex;
+    justify-content: space-between;
+}
+.closeIcon{
+    font-size: 14px;
+    font-weight: 400;
+    color: red;
+    cursor: pointer;
+}
+@media (max-height: 800px) {
+    .formFieldSection{
+        max-height: 300px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 986px) {
+     .loanForm{
+        background: $white;
+        position: relative;
+     }
+     .progressInfo{
+        position: unset !important;
+        width: 100% !important;
+        padding: 40px !important;
+     }
+     .fieldRow{
+        max-width: 100% !important;
+     }
+}
+
+@media (max-width: 768px) {
+
+ .step{
+    width: 50px !important;
+    height: 50px !important;
+ }
+ .fieldSection{
+    width: 100% !important;
+ }
+ .formFieldSection{
+    max-height: unset;
+ }
+ .activeLine{
+    display: none;
+ }
+ .stepInfo {
+    display: none;
+ }
+ .stepInfo.active{
+    display: block;
+    width: 100% !important;
+ }
+ .progressInfo{
+    margin-top: 20px !important;
+ }
+  .stepProgress{
+    &::before{
+        display: none;
+    }
+  }
+}
